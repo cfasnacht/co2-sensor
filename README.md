@@ -10,9 +10,9 @@ http://wiki.seeedstudio.com/Grove-CO2_Temperature_Humidity_Sensor-SCD30/
 
 ## Wiring and setup:
 1. Display:
-http://wiki.seeedstudio.com/Grove-CO2_Temperature_Humidity_Sensor-SCD30/
-2. CO2 sensor:
 https://www.tweaking4all.com/hardware/arduino/sainsmart-arduino-color-display/
+2. CO2 sensor:
+http://wiki.seeedstudio.com/Grove-CO2_Temperature_Humidity_Sensor-SCD30/
 
 ## Code:
 [Simple Arduino program to display the values from the sensors:](./display_co2.ino)
