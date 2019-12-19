@@ -1,6 +1,8 @@
 # Simple Arduino CO2 Sensor PoC with display
 Measures temperatur, CO2 level and humidity
 
+![Poc Image](/co2-sens.jpg)
+
 ## Hardware detail:
 1. Display: SainSmart 1.8″ Color TFT LCD Display for Arduino:
 https://www.sainsmart.com/products/1-8-tft-spi-lcd-screen-with-microsd-socket
