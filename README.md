@@ -1,20 +1,26 @@
-# Simple Arduino CO2 Sensor PoC with display
+# Simple CO2 Sensor PoC with display
 Measures temperatur, CO2 level and humidity
 
-![Poc Image](/co2-sens.jpg)
+![Poc Image](/esp32-co2-sens.jpg){:height="400px" width="300px"}
 
 ## Hardware detail:
-1. Display: SainSmart 1.8″ Color TFT LCD Display for Arduino:
-https://www.sainsmart.com/products/1-8-tft-spi-lcd-screen-with-microsd-socket
+1. ESP32 with display and battery managment system
+https://mikroshop.ch/?gruppe=3&artikel=1820
 2. CO2 Sensor: Seeed Gove SCD30
 http://wiki.seeedstudio.com/Grove-CO2_Temperature_Humidity_Sensor-SCD30/
-3. Arduino Uno
 
 ## Wiring and setup:
-1. Display:
-https://www.tweaking4all.com/hardware/arduino/sainsmart-arduino-color-display/
-2. CO2 sensor:
+1. Display example usage, Wifi scaner:
+https://github.com/hackffm/ESP32_OLED_WifiScanner/blob/master/ESP32_OLED_WifiScanner.ino
+
+2. Wiring
+http://www.areresearch.net/2018/01/how-to-use-ttgo-esp32-module-with-oled.html
+
+3. CO2 sensor:
 http://wiki.seeedstudio.com/Grove-CO2_Temperature_Humidity_Sensor-SCD30/
 
 ## Code:
-[Simple Arduino program to display the values from the sensors:](./display_co2.ino)
+[Simple Arduino IDE program to display the values from the sensors:](./ESP32_CO2_display.inoESP32_CO2_display.ino)
+
+## Old arduino version
+[Arduino version](./arduino_version/README.md)
