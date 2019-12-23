@@ -1,7 +1,7 @@
 # Simple CO2 Sensor PoC with display
 Measures temperatur, CO2 level and humidity
 
-![Poc Image](/esp32-co2-sens.jpg){:height="400px" width="300px"}
+![Poc Image](./images/esp32-co2-sens.jpg =300x300)
 
 ## Hardware detail:
 1. ESP32 with display and battery managment system
