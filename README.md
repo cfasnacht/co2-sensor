@@ -20,7 +20,7 @@ http://www.areresearch.net/2018/01/how-to-use-ttgo-esp32-module-with-oled.html
 http://wiki.seeedstudio.com/Grove-CO2_Temperature_Humidity_Sensor-SCD30/
 
 ## Code:
-[Simple Arduino IDE program to display the values from the sensors:](./ESP32_CO2_display.inoESP32_CO2_display.ino)
+[Simple Arduino IDE program to display the values from the sensors:](./ESP32_CO2_display.ino)
 
 ## Old arduino version
 [Arduino version](./arduino_version/README.md)
