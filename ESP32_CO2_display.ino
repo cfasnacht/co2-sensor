@@ -9,6 +9,7 @@ void setup()
     Serial.println("Setup begin");
     delay(500);
 
+    // This is needed to inialize SCL (Pin 4) / SDA (Pin 5)
     display.init();
     display.flipScreenVertically ();
     display.clear();

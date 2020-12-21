@@ -43,5 +43,7 @@ http://wiki.seeedstudio.com/Grove-CO2_Temperature_Humidity_Sensor-SCD30/
 
 4. Select Upload
 
+5. Press Boot button on the board to enable flashing
+
 ## Old arduino version
 [Arduino version](./arduino_version/README.md)
