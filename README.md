@@ -1,9 +1,13 @@
 # Simple CO2 Sensor PoC with display
-Measures temperatur, CO2 level and humidity
+Displays temperatur, CO2 level and humidity on the display
+
+Connects to Wifi and prints out the IP address
+
+The values can also be read with http e.g. with curl http://192.168.1.x
 
 <img src="https://github.com/cfasnacht/co2-sensor/blob/master/images/esp32-co2-sens.jpg" height="400">
 
-## Hardware detail:
+## Hardware details:
 
 1. ESP32 with display and battery managment system
 https://mikroshop.ch/?gruppe=3&artikel=1820
@@ -31,7 +35,7 @@ http://www.areresearch.net/2018/01/how-to-use-ttgo-esp32-module-with-oled.html
 http://wiki.seeedstudio.com/Grove-CO2_Temperature_Humidity_Sensor-SCD30/
 
 ## Code:
-[Simple Arduino IDE program to display the values from the sensors:](./ESP32_CO2_display.ino)
+[Simple Arduino IDE program to display the values from the sensors](./ESP32_CO2_display.ino)
 
 ## Upload with Arduino IDE
 
