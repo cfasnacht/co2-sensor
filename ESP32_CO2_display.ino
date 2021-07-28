@@ -28,22 +28,32 @@ void setup()
 {
   Serial.begin(115200);
   Serial.println("Setup begin");
-  WiFi.begin(ssid, password);
-  delay(500);
-
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.println("Connecting to WiFi..");
-  }
-  Serial.println("Connected to the WiFi network");
 
   // This is needed to inialize SCL (Pin 4) / SDA (Pin 5)
   display.init();
+  display.setColor(BLACK);
+  display.fillRect(0,0,127,10);
 
   display.flipScreenVertically ();
   display.clear();
   display.setTextAlignment (TEXT_ALIGN_LEFT);
   display.setFont(ArialMT_Plain_16);
+  display.setColor(WHITE);
+
+  display.drawString(0, 0, String("Setup begin"));
+  display.drawString(0, 15, String("Connecting to WiFi"));
+  display.display();
+
+  WiFi.begin(ssid, password);
+  delay(500);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.println("Connecting to WiFi");
+  }
+  Serial.println("Connected to the WiFi network");
+  display.drawString(0, 30, String("Connected"));
+  display.display();
 
   //start webserver:
   server.begin();
@@ -51,7 +61,9 @@ void setup()
 
   scd30.initialize();
   Serial.println("Setup done");
-  delay(2000);
+  display.drawString(0, 45, String("Setup done"));
+  display.display();
+  delay(1000);
 }
 
 void loop()
@@ -61,15 +73,14 @@ void loop()
   display.setColor(BLACK);
   display.fillRect(0,0,127,10);
   display.clear();
-
-//  Serial.println("IP address: " + WiFi.localIP().toString());
-
+  delay(1000);
   if(scd30.isAvailable())
   {
     scd30.getCarbonDioxideConcentration(sensor_values);
   }
   if ( sensor_values[0] == 0)
   {
+    display.setColor(WHITE);
     display.drawString(0, 0, String("Sensor not found"));
     display.drawString(0, 15, "IP: " + WiFi.localIP().toString());
   } else{
@@ -79,7 +90,6 @@ void loop()
     display.drawString(0, 30, "W:      " + String(sensor_values[2]) + " %");
     display.drawString(0, 45, "IP: " + WiFi.localIP().toString());
   }
-
   display.display();
 
   delay(500);
