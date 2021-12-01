@@ -3,6 +3,9 @@
 #include "WebServer.h"
 #include "WiFi.h"
 
+#define ONBOARD_LED  16
+#define CO2_WARN 1000
+
 const char* ssid = "WifiSSID";
 const char* password = "Wifipassword";
 
@@ -28,18 +31,17 @@ void setup()
 {
   Serial.begin(115200);
   Serial.println("Setup begin");
+  pinMode(ONBOARD_LED,OUTPUT);
 
   // This is needed to inialize SCL (Pin 4) / SDA (Pin 5)
   display.init();
   display.setColor(BLACK);
   display.fillRect(0,0,127,10);
-
   display.flipScreenVertically ();
   display.clear();
   display.setTextAlignment (TEXT_ALIGN_LEFT);
   display.setFont(ArialMT_Plain_16);
   display.setColor(WHITE);
-
   display.drawString(0, 0, String("Setup begin"));
   display.drawString(0, 15, String("Connecting to WiFi"));
   display.display();
@@ -89,6 +91,12 @@ void loop()
     display.drawString(0, 15, "T:       " + String(sensor_values[1]) + " C");
     display.drawString(0, 30, "W:      " + String(sensor_values[2]) + " %");
     display.drawString(0, 45, "IP: " + WiFi.localIP().toString());
+    if ( sensor_values[0] >= CO2_WARN )
+    {
+      digitalWrite(ONBOARD_LED,LOW);
+    } else{
+      digitalWrite(ONBOARD_LED,HIGH);
+    }
   }
   display.display();
 
