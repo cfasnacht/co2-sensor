@@ -32,6 +32,8 @@ void setup()
   Serial.begin(115200);
   Serial.println("Setup begin");
   pinMode(ONBOARD_LED,OUTPUT);
+  // HIGH is led turned off
+  digitalWrite(ONBOARD_LED,HIGH);
 
   // This is needed to inialize SCL (Pin 4) / SDA (Pin 5)
   display.init();
